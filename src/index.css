@@ -1,0 +1,375 @@
+:root {
+  --bg: #f6f3ec;
+  --paper: #fffcf7;
+  --ink: #2b2723;
+  --muted: #7a736b;
+  --line: #e4ddd3;
+  --sage: #7d8a73;
+  --brown: #6b5344;
+  --max: 1180px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+}
+
+.page {
+  position: relative;
+  overflow: clip;
+  min-height: 100svh;
+}
+
+.leaf-shadow {
+  position: absolute;
+  top: -4rem;
+  right: -3rem;
+  width: min(46vw, 520px);
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.site-header,
+.hero-grid,
+.site-footer {
+  position: relative;
+  z-index: 1;
+  width: min(var(--max), calc(100% - 3.5rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem 0 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.wordmark {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tagline {
+  margin-top: 0.28rem;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--ink);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2.25rem 0 3.5rem;
+}
+
+.intro h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 11ch;
+}
+
+.intro > p {
+  max-width: 36rem;
+  margin-top: 1.35rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 2.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pillars li {
+  padding: 0 1.1rem;
+  border-left: 1px solid var(--line);
+}
+
+.pillars li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.pillars svg {
+  width: 28px;
+  height: 28px;
+  color: var(--brown);
+}
+
+.pillars h2 {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.pillars p {
+  margin-top: 0.25rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  background: var(--paper);
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(80, 64, 45, 0.1);
+  overflow: hidden;
+  min-height: 430px;
+}
+
+.product-copy {
+  display: grid;
+  align-content: center;
+  gap: 0.85rem;
+  padding: 2.1rem 0.5rem 2.1rem 2rem;
+}
+
+.product-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.product-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.product-brand svg {
+  width: 38px;
+  height: 38px;
+  color: var(--sage);
+  flex-shrink: 0;
+}
+
+.product-brand h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-kicker {
+  margin-top: 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.product-copy h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.product-copy > p:last-of-type {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #171411;
+}
+
+.product-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.25rem 0.5rem 0;
+}
+
+.product-visual img {
+  width: 118%;
+  max-width: none;
+  margin-right: -8%;
+  mix-blend-mode: multiply;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 0.5rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer-script {
+  font-family: Allura, cursive;
+  font-size: 1.7rem;
+  color: var(--ink);
+  line-height: 1;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.15rem;
+}
+
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+
+  .hero-grid,
+  .product-card {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h1 {
+    max-width: 14ch;
+  }
+
+  .product-copy {
+    padding: 1.75rem 1.5rem 0.5rem;
+  }
+
+  .product-visual img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .leaf-shadow {
+    width: 70vw;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .hero-grid,
+  .site-footer {
+    width: min(var(--max), calc(100% - 2rem));
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .pillars li,
+  .pillars li:first-child {
+    padding: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1.1rem;
+  }
+
+  .pillars li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
